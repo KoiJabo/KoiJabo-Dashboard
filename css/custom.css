@@ -1,0 +1,102 @@
+.horizontal{
+	display: flex;
+	flex-flow: row;
+}
+span{
+	font-size: 1.2em;	
+}
+h3{
+	margin-left: 30px;
+}
+#map{
+	height: 800px;
+	width: 100%
+}
+section{
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+	min-width: 200px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+#week-day-input{
+	min-width: 300px;
+}
+.week-day-time-input{
+	width: 100px;
+}
+
+input[type="radio"], input[type="checkbox"] {
+	height: 50px;
+	width: 50px;
+}
+input[type="text"], input[type="number"]{
+	margin: 5px;
+}
+button{
+	padding: 20px;	
+	display: block;
+	margin: 0, auto;
+}
+#button-submit{
+	margin: 40px auto;
+	float: none;
+	width: 100%;
+}
+#override-width {
+	width: 90%;
+    margin: 0 auto;
+}
+
+#submit-button {
+	display: block;
+	margin: auto;
+	float: none;
+	height: 100px;
+}
+
+#loading-gif {
+	display: block;
+	margin: auto;
+	height: 200px;
+	width: 200px;
+}
+
+#success {
+	display: block;
+	margin: auto;
+	margin-bottom: 100px;
+	width: 600px;
+	text-align: center;
+}
+
+#detailed-error-message {
+	font-family: cursive;
+	text-align: center;
+	display: block;
+	margin: 0px auto;
+	margin-bottom: 100px;
+	width: 600px;
+	font-size: 2em;
+	color: hotpink;
+	font-style: italic;
+}
+
+.vertical {
+	display: flex;
+	flex-flow: column;
+	width: 50%
+}
+
+.sub-title {
+	color: white;
+	margin: 0px;
+}

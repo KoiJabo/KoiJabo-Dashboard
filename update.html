@@ -1,0 +1,566 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> 
+<html class="no-js" lang=""> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/custom.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div class="header-container">
+            <header class="wrapper clearfix horizontal">
+				<div class="vertical">
+                	<h1 class="title">Koi Jabo Dashboard</h1>				
+					<h3 class="sub-title">Update page</h3>
+				</div>
+                <nav>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="#">Delete this Restaurant Info</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+
+        <div class="main-container">			
+			<div id="map"></div>
+           	<form id="create-form">
+				<div class="main wrapper clearfix" id="override-width">
+					<div class="horizontal">                  
+                  <div>
+                     <article>
+                        <h1>Genral Info</h1>
+                        <table>
+                           <tr>
+                              <td><span>_id</span></td>
+                              <td>
+                                 <input type="text" id="_id" class="form-control" name="_id" value="" readonly>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td><span>Name</span></td>
+                              <td>
+                                 <input id="Name" type="text" class="form-control" id="Name" name="Name">
+                              </td>
+                           </tr>
+                           <tr>
+                              <td><span>TitleImageUrl</span></td>
+                              <td>
+                                 <input id="TitleImageUrl" type="text" class="form-control" id="TitleImageUrl" name="TitleImageUrl">
+                              </td>
+                           </tr>
+                           <tr>
+                              <td><span>Area</span></td>
+                              <td>
+                                 <input id="Area" type="text" class="form-control" name="Area">
+                              </td>
+                           </tr>
+                              <td><span>Address</span></td>
+                              <td>
+                                 <input id="Address" type="text" class="form-control" name="Address">
+                              </td>
+                           </tr>
+                              <td><span>Latitude</span></td>
+                              <td>
+                                 <input id="Latitude" type="text" class="form-control" name="Latitude" pattern="23.(\d)*" title="Please provide a latitude that is inside bangladesh, like 23.00000">
+                              </td>
+                           </tr>
+                              <td><span>Longitude</span></td>
+                              <td>
+                                 <input id="Longitude" type="text" class="form-control" name="Longitude" pattern="90.(\d)*" title="Please provide a longitude that is inside bangladesh, like 90.00000">
+                              </td>
+                           </tr>                   
+                           <tr>
+                              <td><span>PhoneNumber</span></td>
+                              <td>
+                                 <input id="PhoneNumber" type="text" class="form-control" name="PhoneNumber">
+                              </td>
+                           </tr>                
+                         </table>
+                     </article>
+   				
+                     <article>
+                        <h1>Cost</h1>
+                        <table>
+                           <tr>
+                              <td><span>Cost Upper Limit Per person</span></td>
+                              <td>
+                                 <input id="CostUpperLimit" class="form-control" type="number" name="CostUpperLimit">
+                              </td>
+                           </tr>
+                           <tr>
+                              <td><span>Cost Lower Limit Per person</span></td>
+                              <td>
+                                 <input id="CostLowerLimit" class="form-control" type="number" name="CostLowerLimit">
+                              </td>
+                           </tr>
+                        </table>
+                     </article>
+
+                     <article>
+                        <h1>Good For</h1>
+                        <table>
+                           <tr>
+                              <td>
+                                 <input class="GoodFor" type="checkbox" name="GoodFor" value="Families with children"><span> Families with children</span>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>
+                                 <input class="GoodFor" type="checkbox" name="GoodFor" value="Meetings"><span> Meetings</span>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>
+                                 <input class="GoodFor" type="checkbox" name="GoodFor" value="Large groups"><span> Large groups</span>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>
+                                 <input class="GoodFor" type="checkbox" name="GoodFor" value="Local cuisines"><span> Local cuisines</span>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>
+                                 <input class="GoodFor" type="checkbox" name="GoodFor" value="Romantic"><span> Romantic</span>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>
+                                 <input class="GoodFor" type="checkbox" name="GoodFor" value="Gossip"><span> Gossip</span>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>
+                                 <input class="GoodFor" type="checkbox" name="GoodFor" value="Hangout"><span> Hangout</span>
+                              </td>
+                           </tr>
+                        </table>
+                     </article>
+
+                     <article>
+                        <h1>Tags</h1>
+                        <table>
+                           <tr>
+                              <td>Parking</td>
+                              <td>
+                                 <input class="Parking" type="radio" name="Parking" value="Parking"> Parking
+                                 <input class="Parking" type="radio" name="Street" value="Street"> Street
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>Attire</td>
+                              <td>
+                                 <input class="Attire" type="radio" name="Attire" value="Formal"> Formal
+                                 <input class="Attire" type="radio" name="Attire" value="Casual"> Casual
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>NoiseLevel</td>
+                              <td>
+                                 <input class="NoiseLevel" type="radio" name="NoiseLevel" value="Silent"> Silent
+                                 <input class="NoiseLevel" type="radio" name="NoiseLevel" value="Calm"> Calm
+                                 <input class="NoiseLevel" type="radio" name="NoiseLevel" value="Average"> Average
+                                 <input class="NoiseLevel" type="radio" name="NoiseLevel" value="Silent"> Silent
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>Rooftop</td>
+                              <td>
+                                 <input class="Rooftop" type="radio" name="Rooftop" value="true"> Yes                             
+                                 <input class="Rooftop" type="radio" name="Rooftop" value="false"> No
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>Reservation</td>
+                              <td>
+                                 <input class="Reservation" type="radio" name="Reservation" value="true"> Yes                            
+                                 <input class="Reservation" type="radio" name="Reservation" value="false"> No
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>Delivery</td>
+                              <td>
+                                 <table>
+                                    <tr>
+                                       <td>
+                                          <input class="Delivery" type="radio" name="Delivery" value="true"> Yes
+                                       </td>
+                                       <td>
+                                          <label>Hungry Naki</label>
+                                          <input type="text" class="form-control" name="Hungrynaki" placeholder="Page link of their website">
+                                       </td>
+                                       <td>
+                                          <label>Food Panda</label>
+                                          <input type="text" class="form-control" name="FoodPanda" placeholder="Page link of their website">
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td>
+                                          <input class="Delivery" type="radio" name="Delivery" value="false"> No
+                                       </td>
+                                    </tr>
+                                 </table>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>TakeOut</td>
+                              <td>
+                                 <input class="TakeOut" type="radio" name="TakeOut" value="true"> Yes                             
+                                 <input class="TakeOut" type="radio" name="TakeOut" value="false"> No
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>OutDoor</td>
+                              <td>
+                                 <input class="OutDoor" type="radio" name="OutDoor" value="true"> Yes                             
+                                 <input class="OutDoor" type="radio" name="OutDoor" value="false"> No
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>Wifi</td>
+                              <td>
+                                 <input class="Wifi" type="radio" name="Wifi" value="true"> Yes                             
+                                 <input class="Wifi" type="radio" name="Wifi" value="false"> No
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>Tv</td>
+                              <td>
+                                 <input class="Tv" type="radio" name="Tv" value="true"> Yes                            
+                                 <input class="Tv" type="radio" name="Tv" value="false"> No
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>CandleLight</td>
+                              <td>
+                                 <input class="CandleLight" type="radio" name="CandleLight" value="true"> Yes                            
+                                 <input class="CandleLight" type="radio" name="CandleLight" value="false"> No
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>LuxuryDining</td>
+                              <td>
+                                 <input class="LuxuryDining" type="radio" name="LuxuryDining" value="true"> Yes                              
+                                 <input class="LuxuryDining" type="radio" name="LuxuryDining" value="false"> No
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>Washroom</td>
+                              <td>
+                                 <input class="Washroom" type="radio" name="Washroom" value="true"> Yes                            
+                                 <input class="Washroom" type="radio" name="Washroom" value="false"> No
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>Toilet</td>
+                              <td>
+                                 <input class="Toilet" type="radio" name="Toilet" value="true"> Yes                              
+                                 <input class="Toilet" type="radio" name="Toilet" value="false"> No
+                              </td>
+                           </tr>
+                           
+                        </table>
+                     </article>                
+                  </div>
+                  <div>
+                     <article>
+                        <h1>Time</h1>
+                        <table id="week-day-input">
+                           <thead>
+                           <th>Day</th>
+                              <th>Start Time</th>
+                              <th>Stop Time</th>           
+                           </thead> 
+                           <tbody>
+                              <tr>
+                                 <td>Sunday</td>
+                                 <td><input id="SundayStartTime" class="week-day-time-input form-control" type="number" name="SundayStartTime" min="0" max="24" ></td>
+                                 <td><input id="SundayStopTime" class="week-day-time-input form-control" type="number" name="SundayStopTime" min="0" max="24" ></td>
+                              </tr>
+                              <tr>
+                                 <td>Monday</td>
+                                 <td><input id="MondayStartTime" class="week-day-time-input form-control" type="number" name="MondayStartTime" min="0" max="24" ></td>
+                                 <td><input id="MondayStopTime" class="week-day-time-input form-control" type="number" name="MondayStopTime" min="0" max="24" ></td>
+                              </tr>
+                              <tr>
+                                 <td>Tuesday</td>
+                                 <td><input id="TuesdayStartTime" class="week-day-time-input form-control" type="number" name="TuesdayStartTime" min="0" max="24" ></td>
+                                 <td><input id="TuesdayStopTime" class="week-day-time-input form-control" type="number" name="TuesdayStopTime" min="0" max="24" ></td>
+                              </tr>
+                              <tr>
+                                 <td>Wednesday</td>
+                                 <td><input id="WednesdayStartTime" class="week-day-time-input form-control" type="number" name="WednesdayStartTime" min="0" max="24" ></td>
+                                 <td><input id="WednesdayStopTime" class="week-day-time-input form-control" type="number" name="WednesdayStopTime" min="0" max="24" ></td>
+                              </tr>
+                              <tr>
+                                 <td>Thursday</td>
+                                 <td><input id="ThursdayStartTime" class="week-day-time-input form-control" type="number" name="ThursdayStartTime" min="0" max="24" ></td>
+                                 <td><input id="ThursdayStopTime" class="week-day-time-input form-control" type="number" name="ThursdayStopTime" min="0" max="24" ></td>
+                              </tr>
+                              <tr>
+                                 <td>Friday</td>
+                                 <td><input id="FridayStartTime" class="week-day-time-input form-control" type="number" name="FridayStartTime" min="0" max="24" ></td>
+                                 <td><input id="FridayStopTime" class="week-day-time-input form-control" type="number" name="FridayStopTime" min="0" max="24" ></td>
+                              </tr>
+                              <tr>
+                                 <td>Saturday</td>
+                                 <td><input id="SaturdayStartTime" class="week-day-time-input form-control" type="number" name="SaturdayStartTime" min="0" max="24" ></td>
+                                 <td><input id="SaturdayStopTime" class="week-day-time-input form-control" type="number" name="SaturdayStopTime" min="0" max="24" ></td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </article>
+
+                     <article>
+                        <h1>Credit Cards</h1>
+                        <table>
+                           <tr>
+                              <td>
+                                 <input class="CreditCards" type="checkbox" name="CreditCards" value="Visa"><span> Visa</span>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>
+                                 <input class="CreditCards" type="checkbox" name="CreditCards" value="Master"><span> Master</span>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>
+                                 <input class="CreditCards" type="checkbox" name="CreditCards" value="Nexus"><span> Nexus</span>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>
+                                 <input class="CreditCards" type="checkbox" name="CreditCards" value="American Express"><span> American Express</span>
+                              </td>
+                           </tr>
+                        </table>
+                     </article>
+
+                     <article>
+                        <h1>Establishment Type</h1>
+                        <table>
+                           <tr>
+                              <td>
+                                 <input class="EstablishmentType" type="checkbox" name="EstablishmentType" value="Casual Dining"><span> Casual Dining</span>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>
+                                 <input class="EstablishmentType" type="checkbox" name="EstablishmentType" value="Quick Bites"><span> Quick Bites</span>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>
+                                 <input class="EstablishmentType" type="checkbox" name="EstablishmentType" value="Dessert Parlor"><span> Dessert Parlor</span>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>
+                                 <input class="EstablishmentType" type="checkbox" name="EstablishmentType" value="Bakeries"><span> Bakeries</span>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>
+                                 <input class="EstablishmentType" type="checkbox" name="EstablishmentType" value="Sweat Shops"><span> Sweat Shops</span>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>
+                                 <input class="EstablishmentType" type="checkbox" name="EstablishmentType" value="Cafes"><span> Cafes</span>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>
+                                 <input class="EstablishmentType" type="checkbox" name="EstablishmentType" value="Food Courts"><span> Food Courts</span>
+                              </td>
+                           </tr>
+                        </table>
+                     </article>
+
+
+                     <article>
+                        <h1>Cuisines</h1>
+                        <table>
+                           <tr>
+                              <td>
+                              	<input class="Cuisines" type="checkbox" name="Cuisines" value="Afghani"><span> Afghani
+                              </td>
+                           <td>
+                              <input class="Cuisines" type="checkbox" name="Cuisines" value="Arabian"><span> Arabian
+                           </td>
+                           <td>
+                              <input class="Cuisines" type="checkbox" name="Cuisines" value="Asian"><span> Asian
+                           </td>
+                           <td>
+                              <input class="Cuisines" type="checkbox" name="Cuisines" value="Bakery"><span> Bakery
+                           </td>
+                           </tr>
+                           <tr>
+                              <td>
+                              <input class="Cuisines" type="checkbox" name="Cuisines" value="Bengali"><span> Bengali
+                           </td>
+                           <td>
+                              <input class="Cuisines" type="checkbox" name="Cuisines" value="Beverages"><span> Beverages
+                           </td>
+                           <td>
+                              <input class="Cuisines" type="checkbox" name="Cuisines" value="Biriyani"><span> Biriyani
+                           </td>
+                           <td>
+                              <input class="Cuisines" type="checkbox" name="Cuisines" value="Bufet"><span> Bufet
+                           </td>
+                           </tr>
+                           <tr>
+                              <td>
+                              <input class="Cuisines" type="checkbox" name="Cuisines" value="Burger"><span> Burger
+                           </td>
+                           <td>
+                              <input class="Cuisines" type="checkbox" name="Cuisines" value="Cafe"><span> Cafe
+                           </td>
+                           <td>
+                              <input class="Cuisines" type="checkbox" name="Cuisines" value="Chinese"><span> Chinese
+                           </td>
+                           <td>
+                              <input class="Cuisines" type="checkbox" name="Cuisines" value="Desserts"><span> Desserts
+                           </td>                      
+                           </tr>
+                           <tr>
+                           <td>
+                              <input class="Cuisines" type="checkbox" name="Cuisines" value="FoodCart"><span> FoodCart
+                           </td>
+                           <td>
+                              <input class="Cuisines" type="checkbox" name="Cuisines" value="Hyderabadi"><span> Hyderabadi
+                           </td>
+                           <td>
+                              <input class="Cuisines" type="checkbox" name="Cuisines" value="IceCream"><span> IceCream
+                           </td>
+                           <td>
+                              <input class="Cuisines" type="checkbox" name="Cuisines" value="Indian"><span> Indian
+                           </td>
+                           </tr>
+                           <tr>
+                           <td>
+                              <input class="Cuisines" type="checkbox" name="Cuisines" value="Italian"><span> Italian
+                           </td>
+                           <td>
+                              <input class="Cuisines" type="checkbox" name="Cuisines" value="Juices"><span> Juices
+                           </td>
+                           <td>
+                              <input class="Cuisines" type="checkbox" name="Cuisines" value="Korean"><span> Korean
+                           </td>
+                           <td>
+                              <input class="Cuisines" type="checkbox" name="Cuisines" value="Mediterranean"><span> Mediterranean
+                           </td>
+                           </tr>
+                           <tr>
+                              <td>
+                              <input class="Cuisines" type="checkbox" name="Cuisines" value="Mexican"><span> Mexican
+                           </td>
+                           <td>
+                              <input class="Cuisines" type="checkbox" name="Cuisines" value="MiddleEastern"><span> MiddleEastern
+                           </td>
+                           <td>
+                              <input class="Cuisines" type="checkbox" name="Cuisines" value="Mughlai"><span> Mughlai
+                           </td>
+                           <td>
+                              <input class="Cuisines" type="checkbox" name="Cuisines" value="NorthIndian"><span> NorthIndian
+                           </td>
+                           </tr>
+                           <tr>
+                              <td>
+                              <input class="Cuisines" type="checkbox" name="Cuisines" value="Pizza"><span> Pizza
+                           </td>
+                           <td>
+                              <input class="Cuisines" type="checkbox" name="Cuisines" value="Sandwich"><span> Sandwich
+                           </td>
+                           <td>
+                              <input class="Cuisines" type="checkbox" name="Cuisines" value="SeaFood"><span> SeaFood
+                           </td>
+                           <td>
+                              <input class="Cuisines" type="checkbox" name="Cuisines" value="Spanish"><span> Spanish
+                           </td>
+                           </tr>
+                           <tr>
+                              <td>
+                              <input class="Cuisines" type="checkbox" name="Cuisines" value="Steakhouse"><span> Steakhouse
+                           </td>
+                           <td>
+                              <input class="Cuisines" type="checkbox" name="Cuisines" value="StreetFood"><span> StreetFood
+                           </td>
+                           <td>
+                              <input class="Cuisines" type="checkbox" name="Cuisines" value="Sushi"><span> Sushi
+                           </td>
+                           <td>
+                              <input class="Cuisines" type="checkbox" name="Cuisines" value="Thai"><span> Thai
+                           </td>                      
+                           </tr>
+                           <tr>
+                              <td>
+                                 <input class="Cuisines" type="checkbox" name="Cuisines" value="Visa"><span> Visa</span>
+                              </td>
+                              <td>
+                                 <input class="Cuisines" type="checkbox" name="Cuisines" value="FastFood"><span> FastFood
+                              </td>
+                              <td>
+                                 <input class="Cuisines" type="checkbox" name="Cuisines" value="Turkish"><span> Turkish
+                              </td>
+                           </tr>                      
+                        </table>
+                     </article>
+                  </div>
+               </div>
+               <div id="button-submit">
+				   <div>
+					   	<h1 id="success"></h1>
+					   	<p id="detailed-error-message"></p>
+				   		<img id="loading-gif" src="img/loading.gif"/>
+				   </div>
+				   <div>
+					   <button class="col-md-9 btn btn-primary" id="submit-button">SUBMIT</button>
+				   </div>
+               </div>                     
+            </div> <!-- #main -->
+			</form>
+        </div> <!-- #main-container -->
+
+        <div class="footer-container">
+            <footer class="wrapper">
+                <p>footer : </p>
+            </footer>
+        </div>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.js"><\/script>')</script>
+        <script src="js/update.js"></script>
+		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrpwrT3ffXkV2ID2VN-zKCWs5_YcQpT8g&signed_in=true"></script>
+
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+        </script>
+    </body>
+</html>
