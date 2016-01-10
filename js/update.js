@@ -104,7 +104,8 @@ function loadDataOnHtml(_id){
 		else
 			$("#IsOpenNow").val("Closed")
 		$("#Area").val(data.Area);
-		$("#Address").val(data.Address);		 
+		$("#Address").val(data.Address);
+		$("#TitleImageUrl").val(data.TitleImageUrl);		 
 		$("#PhoneNumber").val(data.PhoneNumber);
 		$("#CostUpperLimit").val(data.CostUpperLimit);
 		$("#CostLowerLimit").val(data.CostLowerLimit);		
